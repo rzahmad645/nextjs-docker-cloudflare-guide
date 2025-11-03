@@ -1,0 +1,11 @@
+Create compose.yaml:
+
+services:
+  web:
+    build: .
+    container_name:
+    expose:
+      - "3000"
+    restart: unless-stopped
+    networks:
+      - appnet
