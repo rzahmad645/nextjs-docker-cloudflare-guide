@@ -1,0 +1,15 @@
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared
+    command: tunnel --no-autoupdate run
+    volumes:
+      - ./cloudflared:/home/nonroot/.cloudflared
+    depends_on:
+      - web
+    restart: unless-stopped
+    networks:
+      - appnet
+
+networks:
+  appnet:
+    driver: bridge
