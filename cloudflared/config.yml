@@ -1,15 +1,7 @@
-  cloudflared:
-    image: cloudflare/cloudflared:latest
-    container_name: cloudflared
-    command: tunnel --no-autoupdate run
-    volumes:
-      - ./cloudflared:/home/nonroot/.cloudflared
-    depends_on:
-      - web
-    restart: unless-stopped
-    networks:
-      - appnet
+tunnel: <YOUR_TUNNEL_ID>  # e.g., 12345678-abcd-ef01-2345-6789abcdef01
+credentials-file: /home/nonroot/.cloudflared/<YOUR_TUNNEL_ID>.json
 
-networks:
-  appnet:
-    driver: bridge
+ingress:
+  - hostname: <YOUR_DOMAIN>  # e.g., example.com
+    service: http://app:3000
+  - service: http_status:404
