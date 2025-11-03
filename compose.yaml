@@ -1,11 +1,30 @@
-Create compose.yaml:
+version: "3.9"
 
 services:
-  web:
+  app:
     build: .
-    container_name:
+    container_name: <Name_Your_Container>    # e.g., project
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
     expose:
-      - "3000"
+      - "3000"                 # internal only; no host port published
     restart: unless-stopped
-    networks:
-      - appnet
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /tmp
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: <Name_Your_Container>    # e.g., cloudflared
+    command: tunnel --no-autoupdate run
+    volumes:
+      - ./cloudflared:/home/nonroot/.cloudflared
+    depends_on:
+      - app
+    restart: unless-stopped
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
