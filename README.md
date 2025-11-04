@@ -16,13 +16,14 @@ This project demonstrates how to:
 
 ## 🧱 Project Structure
 
-├── pages/ # Next.js pages
-├── public/ # Static assets
-├── cloudflared/ # (optional, not used if you connect directly through Cloudflare DNS)
-├── Dockerfile # Multi-stage Docker build
-├── compose.yaml # Docker Compose configuration
-├── next.config.js # Next.js settings
-├── package.json # Dependencies and scripts
+.
+├── pages/              # Next.js pages
+├── public/             # Static assets
+├── cloudflared/        # (optional, not used if you connect directly through Cloudflare DNS)
+├── Dockerfile          # Multi-stage Docker build
+├── compose.yaml        # Docker Compose configuration
+├── next.config.js      # Next.js settings
+├── package.json        # Dependencies and scripts
 ├── package-lock.json
 ├── .gitignore
 ├── .dockerignore
@@ -47,8 +48,7 @@ This project does not require a `.env` file by default.
 All necessary configuration values are defined within the Docker and Cloudflare setup.  
 If you prefer to use one later for convenience, see the `.env.example` section in this guide.
 
-ini
-# .env.example
+## .env.example
 NEXT_PUBLIC_SITE_URL=https://example.com
 CLOUDFLARE_TUNNEL_ID=00000000-0000-0000-0000-000000000000
 
