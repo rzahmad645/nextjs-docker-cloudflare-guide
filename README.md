@@ -37,7 +37,7 @@ Before starting, make sure you have the following installed:
 
 - [Node.js 18+](https://nodejs.org/)
 - [Docker Desktop for Windows](https://www.docker.com/products/docker-desktop/)
-- A [Cloudflare account](https://www.cloudflare.com/) (for domain and DNS)
+- [Cloudflare account](https://www.cloudflare.com/) (for domain and DNS)
 - [PowerShell](https://learn.microsoft.com/en-us/powershell/) (recommended for commands below)
   
 ---
