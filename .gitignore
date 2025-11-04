@@ -137,3 +137,38 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# --- Security / credentials (extra safety) ---
+# Cloudflare Tunnel creds (never commit)
+cloudflared/cert.pem
+cloudflared/*.json
+cloudflared/*.yml
+cloudflared/*.yaml
+# keep example files if you add them
+!cloudflared/config.example.yml
+!cloudflared/README.md
+
+# Generic key/cert files
+*.pem
+*.key
+*.crt
+*.pfx
+
+# npm config can contain auth tokens
+.npmrc
+
+# direnv / shell env helpers
+.envrc
+
+# SSH keys (if any slip into the repo)
+.ssh/
+
+# --- OS / IDE noise ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Platform providers ---
+.vercel/
+.netlify/
