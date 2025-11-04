@@ -15,7 +15,7 @@ This project demonstrates how to:
 ---
 
 ## 🧱 Project Structure
-
+```
 .
 ├── pages/              # Next.js pages
 ├── public/             # Static assets
@@ -28,7 +28,7 @@ This project demonstrates how to:
 ├── .gitignore
 ├── .dockerignore
 └── README.md
-
+```
 ---
 
 ## ⚙️ Prerequisites
